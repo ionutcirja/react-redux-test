@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+.sectors-list {
+  color: $color-black;
+  margin-left: 5px;
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+    text-transform: capitalize;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 9px;
+      left: 0;
+    }
+
+    &--automobile:before {
+      background-color: $color-turquoise;
+    }
+
+    &--agriculture:before {
+      background-color: $color-purple;
+    }
+
+    &--agrifood:before {
+      background-color: $color-green;
+    }
+
+    &--commodities:before {
+      background-color: $color-blue;
+    }
+  }
+}
