@@ -22,7 +22,9 @@
       "!**/coverage/**",
       "!**/webpack.config.js",
       "!**/postcss.config.js",
-      "!**/client/index.js"
+      "!**/client/index.js",
+      "!**/store/**",
+      "!**/reducers/index.js"
     ],
     "testMatch": [
       "**/?(*.)(spec|test).js"
@@ -46,7 +48,9 @@
     "classnames": "^2.2.5",
     "redux": "^3.7.2",
     "react-redux": "^5.0.6",
-    "redux-actions": "^2.2.1"
+    "redux-actions": "^2.2.1",
+    "reselect": "^3.0.1",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
