@@ -18,19 +18,15 @@ describe('AddBtn container', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    const expectedSelectAction = { type: 'SELECT' };
-    const expectedDeselectAction = { type: 'DESELECT' };
-    GraphActions.selectCompany.mockReturnValue(expectedSelectAction);
-    GraphActions.deselectCompany.mockReturnValue(expectedDeselectAction);
+    const expectedAddAction = { type: 'ADD' };
+    GraphActions.addCompany.mockReturnValue(expectedAddAction);
 
     it('should bind the necessary actions to props', () => {
       const component = shallow(<Container store={store} />);
       const props = component.props();
-      props.actions.selectCompany();
-      expect(GraphActions.selectCompany).toHaveBeenCalled();
-      props.actions.deselectCompany();
-      expect(GraphActions.deselectCompany).toHaveBeenCalled();
-      expect(store.getActions()).toEqual([expectedSelectAction, expectedDeselectAction]);
+      props.actions.addCompany();
+      expect(GraphActions.addCompany).toHaveBeenCalled();
+      expect(store.getActions()).toEqual([expectedAddAction]);
     });
   });
 });
