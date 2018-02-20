@@ -1,0 +1,11 @@
+@import 'reset';
+@import 'icons';
+@import 'variables';
+@import 'mixins';
+
+html, body {
+  font-family: $font-primary;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $color-white;
+}
