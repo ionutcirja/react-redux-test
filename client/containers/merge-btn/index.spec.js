@@ -23,7 +23,8 @@ describe('MergeBtn container', () => {
   });
 
   describe('mapStateToProps', () => {
-    it('should pass a isBtnEnabled (its value is true if the number of selected items is equal with 2)', () => {
+    it('should pass a isBtnEnabled prop to the component ' +
+      '(its value should be true if the number of selected items is equal with 2)', () => {
       const component = shallow(<Container store={store} />);
       expect(component.find('MergeBtn').props().isBtnEnabled).toEqual(true);
     });
