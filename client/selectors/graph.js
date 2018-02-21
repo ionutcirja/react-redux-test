@@ -6,12 +6,12 @@ const getListMaxValue = items => Math.max(...items);
 const listItemsKeyValueMap = (list, key) =>
   list.map(item => item[key]);
 
-export const listItemsMinKeyValue = createSelector(
+export const getListItemsMinKeyValue = createSelector(
   listItemsKeyValueMap,
   getListMinValue,
 );
 
-export const listItemsMaxKeyValue = createSelector(
+export const getListItemsMaxKeyValue = createSelector(
   listItemsKeyValueMap,
   getListMaxValue,
 );
@@ -50,5 +50,5 @@ export const mergeListSelectedItems = createSelector(
 export const getListSelectedItemsNum = list =>
   list.reduce((acc, curr) => curr.selected ? acc + 1 : acc, 0);
 
-export const graphSelectedItemSectorSelector = list =>
+export const getListSelectedItemsSector = list =>
   list.filter(item => item.selected)[0].sector;

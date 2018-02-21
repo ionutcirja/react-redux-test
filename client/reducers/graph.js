@@ -4,7 +4,7 @@ import initialState from '../store/initial-state';
 import { State, Action } from '../constants/types';
 import {
   getListSelectedItemsNum,
-  graphSelectedItemSectorSelector,
+  getListSelectedItemsSector,
   mergeListSelectedItems,
   getListUnselectedItems,
 } from '../selectors/graph';
@@ -54,7 +54,7 @@ export default handleActions({
         ...action.payload,
         disabled:
           (getListSelectedItemsNum(state) === 1 &&
-            graphSelectedItemSectorSelector(state) !== action.payload.sector) ||
+            getListSelectedItemsSector(state) !== action.payload.sector) ||
           getListSelectedItemsNum(state) > 1,
       }),
   [GraphActions.mergeSelectedCompanies]: (state: State) =>
