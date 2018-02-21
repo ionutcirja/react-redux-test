@@ -7,10 +7,9 @@ export type Action = {
 export type Company = {
   +id: string,
   +sector: string,
-  +code: string,
-  +name: string,
-  +price: number,
-  +image: string,
+  +valuation: number,
+  +revenue: number,
+  +incorporationDate: number,
   +selected?: boolean,
   +disabled?: boolean,
 };
