@@ -16,13 +16,13 @@ export const listItemsMaxKeyValue = createSelector(
   getListMaxValue,
 );
 
-const graphSelectedItemsSelector = list =>
+const getListSelectedItems = list =>
   list.filter(item => item.selected);
 
-export const graphUnselectedItemsSelector = list =>
+export const getListUnselectedItems = list =>
   list.filter(item => !item.selected);
 
-const graphCumulativeSelectedItemsSelector = list =>
+const aggregateListSelectedItems = list =>
   list.reduce(
     (acc, curr) => ({
       id: acc.incorporationDate && acc.incorporationDate <= curr.incorporationDate ?
@@ -42,12 +42,12 @@ const graphCumulativeSelectedItemsSelector = list =>
     {},
   );
 
-export const graphMergedSelectedItemsSelector = createSelector(
-  graphSelectedItemsSelector,
-  graphCumulativeSelectedItemsSelector,
+export const mergeListSelectedItems = createSelector(
+  getListSelectedItems,
+  aggregateListSelectedItems,
 );
 
-export const graphSelectedItemsNumSelector = list =>
+export const getListSelectedItemsNum = list =>
   list.reduce((acc, curr) => curr.selected ? acc + 1 : acc, 0);
 
 export const graphSelectedItemSectorSelector = list =>

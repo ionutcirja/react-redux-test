@@ -3,10 +3,10 @@ import { handleActions } from 'redux-actions';
 import initialState from '../store/initial-state';
 import { State, Action } from '../constants/types';
 import {
-  graphSelectedItemsNumSelector,
+  getListSelectedItemsNum,
   graphSelectedItemSectorSelector,
-  graphMergedSelectedItemsSelector,
-  graphUnselectedItemsSelector,
+  mergeListSelectedItems,
+  getListUnselectedItems,
 } from '../selectors/graph';
 import * as GraphActions from '../actions/graph';
 
@@ -26,7 +26,7 @@ export default handleActions({
           {
             disabled:
               item.sector !== action.payload.sector ||
-              (!item.selected && graphSelectedItemsNumSelector(state) > 0),
+              (!item.selected && getListSelectedItemsNum(state) > 0),
           },
         )),
   [GraphActions.deselectCompany]: (state: State, action: Action) =>
@@ -43,7 +43,7 @@ export default handleActions({
           { ...item },
           {
             disabled:
-              graphSelectedItemsNumSelector(state) > 1 &&
+              getListSelectedItemsNum(state) > 1 &&
               item.sector !== action.payload.sector,
           },
         )),
@@ -53,13 +53,13 @@ export default handleActions({
       .concat({
         ...action.payload,
         disabled:
-          (graphSelectedItemsNumSelector(state) === 1 &&
+          (getListSelectedItemsNum(state) === 1 &&
             graphSelectedItemSectorSelector(state) !== action.payload.sector) ||
-          graphSelectedItemsNumSelector(state) > 1,
+          getListSelectedItemsNum(state) > 1,
       }),
   [GraphActions.mergeSelectedCompanies]: (state: State) =>
-    graphUnselectedItemsSelector(state)
+    getListUnselectedItems(state)
       .map(item =>
         Object.assign({}, { ...item }, { disabled: false }))
-      .concat([graphMergedSelectedItemsSelector(state)]),
+      .concat([mergeListSelectedItems(state)]),
 }, initialState.graph);
