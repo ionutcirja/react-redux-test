@@ -1,0 +1,8 @@
+@import '../../styles/variables';
+
+.button {
+
+  &--add {
+    background-color: $color-dark-blue;
+  }
+}
