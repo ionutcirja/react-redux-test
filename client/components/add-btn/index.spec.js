@@ -20,7 +20,7 @@ describe('AddBtn component', () => {
   };
 
   describe('render', () => {
-    it('should a button', () => {
+    it('should render a button', () => {
       const wrapper = shallow(<Component {...renderProps} />);
       expect(wrapper.find('button').length).toEqual(1);
     });
