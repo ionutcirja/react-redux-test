@@ -2,19 +2,19 @@
 import { connect } from 'react-redux';
 import { State } from '../../constants/types';
 import {
-  graphItemsMinKeyValuesSelector,
-  graphItemsMaxKeyValuesSelector,
+  listItemsMinKeyValue,
+  listItemsMaxKeyValue,
 } from '../../selectors/graph';
 import Graph from '../../components/graph';
 
 const mapStateToProps = (state: State) => ({
   graphList: state.graph,
-  minValuation: graphItemsMinKeyValuesSelector(state.graph, 'valuation'),
-  maxValuation: graphItemsMaxKeyValuesSelector(state.graph, 'valuation'),
-  minIncorporationDate: graphItemsMinKeyValuesSelector(state.graph, 'incorporationDate'),
-  maxIncorporationDate: graphItemsMaxKeyValuesSelector(state.graph, 'incorporationDate'),
-  minRevenue: graphItemsMinKeyValuesSelector(state.graph, 'revenue'),
-  maxRevenue: graphItemsMaxKeyValuesSelector(state.graph, 'revenue'),
+  minValuation: listItemsMinKeyValue(state.graph, 'valuation'),
+  maxValuation: listItemsMaxKeyValue(state.graph, 'valuation'),
+  minIncorporationDate: listItemsMinKeyValue(state.graph, 'incorporationDate'),
+  maxIncorporationDate: listItemsMaxKeyValue(state.graph, 'incorporationDate'),
+  minRevenue: listItemsMinKeyValue(state.graph, 'revenue'),
+  maxRevenue: listItemsMaxKeyValue(state.graph, 'revenue'),
 });
 
 export default connect(mapStateToProps)(Graph);

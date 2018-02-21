@@ -3,16 +3,16 @@ import { createSelector } from 'reselect';
 const computeListMin = items => Math.min(...items);
 const computeListMax = items => Math.max(...items);
 
-const graphItemsKeyValuesSelector = (list, key) =>
+const listItemsKeyValueMap = (list, key) =>
   list.map(item => item[key]);
 
-export const graphItemsMinKeyValuesSelector = createSelector(
-  graphItemsKeyValuesSelector,
+export const listItemsMinKeyValue = createSelector(
+  listItemsKeyValueMap,
   computeListMin,
 );
 
-export const graphItemsMaxKeyValuesSelector = createSelector(
-  graphItemsKeyValuesSelector,
+export const listItemsMaxKeyValue = createSelector(
+  listItemsKeyValueMap,
   computeListMax,
 );
 
