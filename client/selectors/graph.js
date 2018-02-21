@@ -1,19 +1,19 @@
 import { createSelector } from 'reselect';
 
-const computeListMin = items => Math.min(...items);
-const computeListMax = items => Math.max(...items);
+const getListMinValue = items => Math.min(...items);
+const getListMaxValue = items => Math.max(...items);
 
 const listItemsKeyValueMap = (list, key) =>
   list.map(item => item[key]);
 
 export const listItemsMinKeyValue = createSelector(
   listItemsKeyValueMap,
-  computeListMin,
+  getListMinValue,
 );
 
 export const listItemsMaxKeyValue = createSelector(
   listItemsKeyValueMap,
-  computeListMax,
+  getListMaxValue,
 );
 
 const graphSelectedItemsSelector = list =>
