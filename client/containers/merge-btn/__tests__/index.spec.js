@@ -16,14 +16,14 @@ describe('MergeBtn container', () => {
   });
 
   describe('render', () => {
-    it('should render an MergeBtn component', () => {
+    it('should render a MergeBtn component', () => {
       const component = shallow(<Container store={store} />);
       expect(component.find('MergeBtn').length).toEqual(1);
     });
   });
 
   describe('mapStateToProps', () => {
-    it('should pass a isBtnEnabled prop to the component ' +
+    it('should pass a button enabled prop to the component ' +
       '(its value should be true if the number of selected items is equal with 2)', () => {
       const component = shallow(<Container store={store} />);
       expect(component.find('MergeBtn').props().isBtnEnabled).toEqual(true);

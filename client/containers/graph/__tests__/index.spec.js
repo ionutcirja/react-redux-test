@@ -27,14 +27,14 @@ describe('Graph container', () => {
   const store = createMockStore(state);
 
   describe('render', () => {
-    it('should render an Graph component', () => {
+    it('should render a Graph component', () => {
       const component = shallow(<Container store={store} />);
       expect(component.find('Graph').length).toEqual(1);
     });
   });
 
   describe('mapStateToProps', () => {
-    it('should pass the graph list props and ' +
+    it('should pass the companies list and ' +
       'the min / max values of valuation, revenue and incorporationDate props', () => {
       const component = shallow(<Container store={store} />);
       const props = component.find('Graph').props();

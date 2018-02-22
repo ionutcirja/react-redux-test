@@ -63,7 +63,7 @@ describe('GraphItem component', () => {
       expect(renderProps.actions.deselectCompany).not.toHaveBeenCalled();
     });
 
-    it('should call select company action on click if the element is enabled and it is not selected already', () => {
+    it('should call select company action on click if the element is enabled and it is not already selected', () => {
       const wrapper = shallow(<Component {...renderProps} />);
       wrapper.find('li').props().onClick();
       expect(renderProps.actions.selectCompany).toHaveBeenCalledWith({
@@ -72,7 +72,7 @@ describe('GraphItem component', () => {
       });
     });
 
-    it('should call deselect company action on click if the element is enabled and it is selected already', () => {
+    it('should call deselect company action on click if the element is enabled and it is already selected', () => {
       renderProps.selected = true;
       const wrapper = shallow(<Component {...renderProps} />);
       wrapper.find('li').props().onClick();

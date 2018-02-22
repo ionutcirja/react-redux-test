@@ -31,7 +31,7 @@ describe('App component', () => {
       expect(wrapper.find(AddBtn).props().sectorsList).toEqual(renderProps.sectorsList);
     });
 
-    it('should render a add button', () => {
+    it('should render a merge button', () => {
       const wrapper = shallow(<Component {...renderProps} />);
       expect(wrapper.find(MergeBtn).length).toEqual(1);
     });
