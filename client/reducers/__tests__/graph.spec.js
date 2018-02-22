@@ -1,8 +1,8 @@
 import deepFreeze from 'deep-freeze';
-import reducers from '../graph';
+import reducers from '../companies-list';
 import * as actions from '../../actions/graph';
 
-describe('Graph reducers', () => {
+describe('CompaniesList reducers', () => {
   describe('selectCompany', () => {
     it('should mark a company as selected and mark all the different sectors companies as disabled ' +
       'if the current selected companies number is equal with 0', () => {
@@ -26,7 +26,7 @@ describe('Graph reducers', () => {
       ];
       deepFreeze(initialState);
 
-      const payload = actions.selectCompany({
+      const action = actions.selectCompany({
         id: 1,
         sector: 'a',
       });
@@ -54,7 +54,7 @@ describe('Graph reducers', () => {
         },
       ];
 
-      expect(reducers(initialState, payload)).toEqual(output);
+      expect(reducers(initialState, action)).toEqual(output);
     });
 
     it('should mark a company as selected and mark all the other unselected companies as disabled ' +

@@ -1,7 +1,7 @@
 // @flow
 import { combineReducers } from 'redux';
-import graph from './graph';
+import companiesList from './companies-list';
 
 export default combineReducers({
-  graph,
+  companiesList,
 });
