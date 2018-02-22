@@ -1,6 +1,7 @@
 # React & Redux test
 
-Simple application to test React and Redux.
+Simple application to test react and redux.
+
 Other tools used:
 - flow
 - jest
