@@ -6,7 +6,7 @@ import Container from '../';
 describe('Graph container', () => {
   const createMockStore = configureMockStore();
   const state = {
-    graph: [
+    companiesList: [
       {
         valuation: 100,
         incorporationDate: 300000,
@@ -38,7 +38,7 @@ describe('Graph container', () => {
       'the min / max values of valuation, revenue and incorporationDate props', () => {
       const component = shallow(<Container store={store} />);
       const props = component.find('Graph').props();
-      expect(props.graphList).toEqual(state.graph);
+      expect(props.companiesList).toEqual(state.companiesList);
       expect(props.minValuation).toEqual(100);
       expect(props.maxValuation).toEqual(700);
       expect(props.minIncorporationDate).toEqual(100000);

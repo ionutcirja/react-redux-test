@@ -16,7 +16,8 @@ export type Company = {
   +disabled?: boolean,
 };
 
+export type CompaniesList = Array<Company>;
+
 export type State = {
-  +sectors: Array<string>,
-  +graph: Array<Company>,
+  +companiesList: CompaniesList,
 };

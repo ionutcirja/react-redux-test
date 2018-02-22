@@ -9,7 +9,7 @@ jest.mock('../../../actions/graph');
 describe('MergeBtn container', () => {
   const createMockStore = configureMockStore();
   const store = createMockStore({
-    graph: [
+    companiesList: [
       { selected: true },
       { selected: true },
     ],

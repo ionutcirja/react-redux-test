@@ -1,10 +1,10 @@
 import React from 'react';
-import { Company } from '../../constants/types';
+import { CompaniesList } from '../../constants/types';
 import GraphItem from '../../containers/graph-item';
 import './index.scss';
 
 type Props = {
-  graphList: Array<Company>,
+  companiesList: CompaniesList,
   minValuation: number,
   maxValuation: number,
   minIncorporationDate: number,
@@ -16,7 +16,7 @@ type Props = {
 const Graph = (props: Props) => (
   <div className="graph__wrapper">
     <ul className="graph">
-      {props.graphList.map(item => (
+      {props.companiesList.map(item => (
         <GraphItem
           key={item.id}
           {...item}

@@ -1,7 +1,7 @@
 import uuid from 'uuid/v4';
 
 export default {
-  graph: [
+  companiesList: [
     {
       id: uuid(),
       sector: 'automobile',

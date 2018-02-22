@@ -5,7 +5,7 @@ import Component from '../';
 
 describe('Graph component', () => {
   const renderProps = {
-    graphList: [
+    companiesList: [
       {
         id: '1',
         sector: 'sector-1',
@@ -34,13 +34,16 @@ describe('Graph component', () => {
       const wrapper = shallow(<Component {...renderProps} />);
       const list = wrapper.find(GraphItem);
       const listLength = list.length;
-      expect(listLength).toEqual(renderProps.graphList.length);
+      expect(listLength).toEqual(renderProps.companiesList.length);
+      let listItemProps;
+      let companyData;
       for (let i = 0; i < listLength; i += 1) {
-        const listItemProps = list.at(i).props();
-        expect(listItemProps.sector).toEqual(renderProps.graphList[i].sector);
-        expect(listItemProps.valuation).toEqual(renderProps.graphList[i].valuation);
-        expect(listItemProps.incorporationDate).toEqual(renderProps.graphList[i].incorporationDate);
-        expect(listItemProps.revenue).toEqual(renderProps.graphList[i].revenue);
+        listItemProps = list.at(i).props();
+        companyData = renderProps.companiesList[i];
+        expect(listItemProps.sector).toEqual(companyData.sector);
+        expect(listItemProps.valuation).toEqual(companyData.valuation);
+        expect(listItemProps.incorporationDate).toEqual(companyData.incorporationDate);
+        expect(listItemProps.revenue).toEqual(companyData.revenue);
         expect(listItemProps.minValuation).toEqual(renderProps.minValuation);
         expect(listItemProps.maxValuation).toEqual(renderProps.maxValuation);
         expect(listItemProps.minIncorporationDate).toEqual(renderProps.minIncorporationDate);
