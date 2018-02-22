@@ -27,7 +27,7 @@
       "!**/reducers/index.js"
     ],
     "testMatch": [
-      "**/?(*.)(spec|test).js"
+      "**/__tests__/?(*.)(spec|test).js"
     ],
     "moduleNameMapper": {
       "\\.(scss)$": "<rootDir>/tests-setup/module-mock.js"

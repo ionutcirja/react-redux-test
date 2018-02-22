@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
-import Container from './index';
-import * as GraphActions from '../../actions/graph';
+import Container from '../';
+import * as GraphActions from '../../../actions/graph';
 
-jest.mock('../../actions/graph');
+jest.mock('../../../actions/graph');
 
 describe('AddBtn container', () => {
   const createMockStore = configureMockStore();

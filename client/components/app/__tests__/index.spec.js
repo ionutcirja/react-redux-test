@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Graph from '../../containers/graph';
-import AddBtn from '../../containers/add-btn';
-import MergeBtn from '../../containers/merge-btn';
-import Component from './';
+import Graph from '../../../containers/graph/index';
+import AddBtn from '../../../containers/add-btn/index';
+import MergeBtn from '../../../containers/merge-btn/index';
+import Component from '../';
 
 describe('App component', () => {
   const renderProps = {

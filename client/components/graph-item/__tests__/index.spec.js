@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Component from './';
+import Component from '../';
 
 describe('GraphItem component', () => {
   let renderProps;

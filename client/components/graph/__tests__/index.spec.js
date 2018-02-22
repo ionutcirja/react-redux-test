@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import GraphItem from '../../containers/graph-item';
-import Component from './';
+import GraphItem from '../../../containers/graph-item/index';
+import Component from '../';
 
 describe('Graph component', () => {
   const renderProps = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
-import Container from './index';
+import Container from '../';
 
 describe('Graph container', () => {
   const createMockStore = configureMockStore();

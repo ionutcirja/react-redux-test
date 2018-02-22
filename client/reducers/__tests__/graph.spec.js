@@ -1,6 +1,6 @@
 import deepFreeze from 'deep-freeze';
-import reducers from './graph';
-import * as actions from '../actions/graph';
+import reducers from '../graph';
+import * as actions from '../../actions/graph';
 
 describe('Graph reducers', () => {
   describe('selectCompany', () => {

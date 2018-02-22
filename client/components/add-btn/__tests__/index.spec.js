@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import uuid from 'uuid/v4';
-import Component from './';
+import Component from '../';
 
 jest.mock('uuid/v4');
 
