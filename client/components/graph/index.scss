@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+.graph {
+  position: relative;
+  height: 100%;
+
+  &__wrapper {
+    position: relative;
+    height: 65%;
+    min-height: 400px;
+    padding: 75px;
+    border-left: 1px solid $color-grey-light;
+    border-bottom: 1px solid $color-grey-light;
+
+    &:before,
+    &:after {
+      position: absolute;
+      text-transform: uppercase;
+      color: $color-grey;
+    }
+
+    &:before {
+      content: 'revenue';
+      transform: rotate(-90deg);
+      transform-origin: 0 0;
+      top: 55px;
+      left: -28px;
+    }
+
+    &:after {
+      content: 'incorporation date';
+      right: 5px;
+      bottom: -29px;
+    }
+  }
+}
