@@ -1,6 +1,12 @@
 # React & Redux test
 
 Simple application to test React and Redux.
+Other tools used:
+- flow
+- jest
+- eslint
+- webpack
+- babel
 
 ## Install
 
