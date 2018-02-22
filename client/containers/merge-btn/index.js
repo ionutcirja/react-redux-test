@@ -1,7 +1,7 @@
 // @flow
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { State } from '../../constants/types';
+import { State, Dispatch } from '../../constants/types';
 import * as GraphActions from '../../actions/graph';
 import { getListSelectedItemsNum } from '../../selectors/graph';
 import MergeBtn from '../../components/merge-btn';
@@ -10,7 +10,7 @@ const mapStateToProps = (state: State) => ({
   isBtnEnabled: getListSelectedItemsNum(state.graph) === 2,
 });
 
-const mapDispatchToProps = (dispatch: Function) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   actions: bindActionCreators(GraphActions, dispatch),
 });
 

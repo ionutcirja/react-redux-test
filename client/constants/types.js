@@ -4,6 +4,8 @@ export type Action = {
   +payload?: {},
 };
 
+export type Dispatch = (action: Action) => any;
+
 export type Company = {
   +id: string,
   +sector: string,
