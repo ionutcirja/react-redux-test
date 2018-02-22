@@ -16,7 +16,7 @@ const store = initStore();
 
 render(
   <Provider store={store}>
-    <App sectors={SECTORS_LIST} />
+    <App sectorsList={SECTORS_LIST} />
   </Provider>,
   document.getElementById('root'),
 );
