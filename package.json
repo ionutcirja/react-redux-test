@@ -12,9 +12,10 @@
     "flow": "flow"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./tests-setup/index.js",
+    "setupTestFrameworkScriptFile": "./config/enzyme-setup.js",
     "verbose": true,
     "collectCoverage": true,
+    "testURL": "http://localhost/",
     "collectCoverageFrom": [
       "**/*.{js}",
       "!**/node_modules/**",
@@ -30,7 +31,7 @@
       "**/__tests__/?(*.)(spec|test).js"
     ],
     "moduleNameMapper": {
-      "\\.(scss)$": "<rootDir>/tests-setup/module-mock.js"
+      "\\.(scss)$": "<rootDir>/config/module-mock.js"
     }
   },
   "browserslist": [
