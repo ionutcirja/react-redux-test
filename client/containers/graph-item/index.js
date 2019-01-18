@@ -1,7 +1,7 @@
 // @flow
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Dispatch } from '../../constants/types';
+import type { Dispatch } from '../../types';
 import * as GraphActions from '../../actions/graph';
 import GraphItem from '../../components/graph-item';
 

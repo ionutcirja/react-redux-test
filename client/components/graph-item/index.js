@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Company } from '../../constants/types';
+import type { Company } from '../../types';
 import './index.scss';
 
 type Props = Company & {

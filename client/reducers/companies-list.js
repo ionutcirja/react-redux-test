@@ -1,7 +1,7 @@
 // @flow
 import { handleActions } from 'redux-actions';
 import initialState from '../store/initial-state';
-import { CompaniesList, Action } from '../constants/types';
+import type { CompaniesList, Action } from '../types';
 import {
   getListSelectedItemsNum,
   getListSelectedItemsSector,

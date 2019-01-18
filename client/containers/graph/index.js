@@ -1,6 +1,6 @@
 // @flow
 import { connect } from 'react-redux';
-import { State } from '../../constants/types';
+import type { State } from '../../types';
 import {
   getListItemsMinKeyValue,
   getListItemsMaxKeyValue,

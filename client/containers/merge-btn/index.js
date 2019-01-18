@@ -1,7 +1,7 @@
 // @flow
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { State, Dispatch } from '../../constants/types';
+import type { State, Dispatch } from '../../types';
 import * as GraphActions from '../../actions/graph';
 import { getListSelectedItemsNum } from '../../selectors/graph';
 import MergeBtn from '../../components/merge-btn';

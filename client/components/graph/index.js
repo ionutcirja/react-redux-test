@@ -1,5 +1,5 @@
 import React from 'react';
-import { CompaniesList } from '../../constants/types';
+import type { CompaniesList } from '../../types';
 import GraphItem from '../../containers/graph-item';
 import './index.scss';
 
