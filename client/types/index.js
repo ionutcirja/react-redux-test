@@ -1,7 +1,11 @@
 export type Action = {
   +type: string,
-  +meta?: {},
-  +payload?: {},
+  +meta?: {
+    [key: string]: any,
+  },
+  +payload?: {
+    [key: string]: any,
+  },
 };
 
 export type Company = {
