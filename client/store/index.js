@@ -2,9 +2,9 @@
 // @flow
 import { createStore, compose } from 'redux';
 import reducer from '../reducers';
-import initialState from './initial-state';
+import type { State } from '../types';
 
-export default (debug: boolean = true) => {
+export default (initialState: State = {}, debug: boolean = true) => {
   const composeEnhancers = (debug && global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
   return createStore(

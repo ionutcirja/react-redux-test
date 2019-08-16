@@ -1,6 +1,5 @@
 // @flow
 import { handleActions } from 'redux-actions';
-import initialState from '../store/initial-state';
 import type { CompaniesList, Action } from '../types';
 import {
   getListSelectedItemsNum,
@@ -48,4 +47,4 @@ export default handleActions({
     getListUnselectedItems(state)
       .map(item => ({ ...item, disabled: false }))
       .concat([mergeListSelectedItems(state)]),
-}, initialState.companiesList);
+}, []);
