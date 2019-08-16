@@ -1,3 +1,8 @@
+import type {
+  Store as ReduxStore,
+  Dispatch as ReduxDispatch,
+} from 'redux';
+
 export type Action = {
   +type: string,
   +meta?: {
@@ -23,3 +28,6 @@ export type CompaniesList = Array<Company>;
 export type State = {
   +companiesList: CompaniesList,
 };
+
+export type Store = ReduxStore<State, Action>;
+export type Dispatch = ReduxDispatch<Action>;
