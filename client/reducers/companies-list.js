@@ -11,55 +11,41 @@ import {
 import * as GraphActions from '../actions/graph';
 
 export default handleActions({
-  [GraphActions.selectCompany]: (state: CompaniesList, action: Action) =>
+  [GraphActions.selectCompany]: (state: CompaniesList, { payload }: Action) =>
     state.map(item =>
-      item.id === action.payload.id ?
-        Object.assign(
-          {},
-          { ...item },
-          { ...action.payload },
-          { selected: true },
-        ) :
-        Object.assign(
-          {},
-          { ...item },
-          {
-            disabled:
-              item.sector !== action.payload.sector ||
-              (!item.selected && getListSelectedItemsNum(state) > 0),
-          },
-        )),
-  [GraphActions.deselectCompany]: (state: CompaniesList, action: Action) =>
+      item.id === payload.id ?
+        {
+          ...item,
+          ...payload,
+          selected: true,
+        } :
+        {
+          ...item,
+          disabled: item.sector !== payload.sector ||
+            (!item.selected && getListSelectedItemsNum(state) > 0),
+        }),
+  [GraphActions.deselectCompany]: (state: CompaniesList, { payload }: Action) =>
     state.map(item =>
-      item.id === action.payload.id ?
-        Object.assign(
-          {},
-          { ...item },
-          { ...action.payload },
-          { selected: false },
-        ) :
-        Object.assign(
-          {},
-          { ...item },
-          {
-            disabled:
-              getListSelectedItemsNum(state) > 1 &&
-              item.sector !== action.payload.sector,
-          },
-        )),
-  [GraphActions.addCompany]: (state: CompaniesList, action: Action) =>
-    []
-      .concat(state)
-      .concat({
-        ...action.payload,
-        disabled:
-          (getListSelectedItemsNum(state) === 1 &&
-            getListSelectedItemsSector(state) !== action.payload.sector) ||
-          getListSelectedItemsNum(state) > 1,
-      }),
+      item.id === payload.id ?
+        {
+          ...item,
+          ...payload,
+          selected: false,
+        } :
+        {
+          ...item,
+          disabled: getListSelectedItemsNum(state) > 1 &&
+            item.sector !== payload.sector,
+        }),
+  [GraphActions.addCompany]: (state: CompaniesList, { payload }: Action) =>
+    state.concat({
+      ...payload,
+      disabled: (getListSelectedItemsNum(state) === 1 &&
+        getListSelectedItemsSector(state) !== payload.sector) ||
+        getListSelectedItemsNum(state) > 1,
+    }),
   [GraphActions.mergeSelectedCompanies]: (state: CompaniesList) =>
     getListUnselectedItems(state)
-      .map(item =>
-        Object.assign({}, { ...item }, { disabled: false }))
+      .map(item => ({ ...item, disabled: false }))
       .concat([mergeListSelectedItems(state)]),
 }, initialState.companiesList);
