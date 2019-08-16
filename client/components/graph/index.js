@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import type { CompaniesList } from '../../types';
 import GraphItem from '../../containers/graph-item';

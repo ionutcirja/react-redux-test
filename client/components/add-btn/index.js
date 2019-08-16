@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import uuid from 'uuid/v4';
 import './index.scss';
